@@ -4,6 +4,7 @@ import App from "next/app";
 import { Josefin_Sans } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import { Jost } from "next/font/google";
+import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -23,11 +24,15 @@ const playfairDisplay = Playfair_Display({
 export default function MyApp({ Component, pageProps, bandData }) {
   return (
     <>
-      <Layout bandData={bandData}>
-        <main className={`${josefinSans.variable} font-sans ${playfairDisplay.variable} font-serif  `}>
-          <Component {...pageProps} />
-        </main>
-      </Layout>
+      <StyledEngineProvider injectFirst>
+        <Layout bandData={bandData}>
+          <main
+            className={`${josefinSans.variable} font-sans ${playfairDisplay.variable} font-serif  `}
+          >
+            <Component {...pageProps} />
+          </main>
+        </Layout>
+      </StyledEngineProvider>
     </>
   );
 }
