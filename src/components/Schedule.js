@@ -3,6 +3,7 @@ import { ObjectDay } from "@/components/ObjectDay";
 import { SearchedBands } from "@/components/SearchedBands";
 
 export function Schedule({ schedule, selectedStage, selectedDay, selectedAct, bands, LocalStorageFavourite, localChecked }) {
+  console.log(schedule)
   //   function LocalStorageFavourite(e) {
   //   console.log(e);
   //   if (e.target.checked) {
@@ -19,6 +20,7 @@ export function Schedule({ schedule, selectedStage, selectedDay, selectedAct, ba
 
   return (
     <div className="schedule">
+
       {/* Denne function gør at vi kan filtrere på hvilke scener der skal vises */}
       {Object.keys(schedule)
         .filter(stage => !selectedStage || stage === selectedStage)
@@ -39,7 +41,7 @@ export function Schedule({ schedule, selectedStage, selectedDay, selectedAct, ba
             /* --------------------------------------- */
             return <div key={stage}>
               <h2 className="uppercase text-4xl md:text-5xl lg:text-7xl text-center my-6 md:my-10 lg:my-20 md:mt-18 lg:mt-30">{stage}</h2>
-              
+
               <ObjectDay
                 schedule={schedule}
                 stage={...schedule[stage]}

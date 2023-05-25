@@ -107,11 +107,18 @@ export default function Program({ schedule, bands }) {
   const action = (
     <>
       <Anchor href="personalprogram">
-        <Button color="success" size="small">
+        <Button
+          color="success"
+          size="small"
+        >
           See Personal Program
         </Button>
       </Anchor>
-      <IconButton size="small" aria-label="close" color="inherit">
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+      >
         <CloseIcon fontSize="small" />
       </IconButton>
     </>
